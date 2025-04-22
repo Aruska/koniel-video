@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Full Screen Video</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      /* background-color: black; */
+    }
+
+    video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* 정중앙 배치 */
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover; /* 화면 꽉 채움 (비율 유지) */
+        z-index: -1;
+        /* 아래 두 줄은 영상 품질에 도움 됨 */
+        image-rendering: auto;
+        backface-visibility: hidden;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      font-size: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+    <video autoplay muted loop playsinline preload="auto" >
+    <source src="logo.mp4" type="video/mp4">
+    브라우저가 video 태그를 지원하지 않습니다.
+  </video>
+
+  <div class="content">
+    <!-- 여기에 영상 위에 보일 텍스트나 버튼 넣을 수 있음 -->
+   
+  </div>
+</body>
+</html>
